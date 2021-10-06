@@ -42,20 +42,19 @@ class OcleaLowCodeAI {
   }
 
   private _getBlocks = () => {
-    const blocks = [
-      this.WhenObjectDetectedBlock.generate("whenObjectDetected"),
-      this.ReportTypeBlock.generate("getType"),
-      this.ReportObjectDetectedBlock.generate("getDetectedObject"),
-      this.ReportObjectAgeBlock.generate("getObjectAge"),
-      this.ReportObjectTypeBlock.generate("getObjectType"),
-      this.CommandSendEmailBlock.generate("sendEmail"),
-      this.CommandGoogleSheetsBlock.generate("addToGoogleSheet"),
-      // this.CommandTestBlock.generate("commandTestBlockOp"),
+      // console.log("blocks ============================");
+    // console.log(blocks);
+    // console.log("end ========= ===================");
+    return [
+        this.WhenObjectDetectedBlock.generate("whenObjectDetected"),
+        this.ReportTypeBlock.generate("getType"),
+        this.ReportObjectDetectedBlock.generate("getDetectedObject"),
+        this.ReportObjectAgeBlock.generate("getObjectAge"),
+        this.ReportObjectTypeBlock.generate("getObjectType"),
+        this.CommandSendEmailBlock.generate("sendEmail"),
+        this.CommandGoogleSheetsBlock.generate("addToGoogleSheet"),
+        // this.CommandTestBlock.generate("commandTestBlockOp"),
     ];
-    console.log("blocks ============================");
-    console.log(blocks);
-    console.log("end ========= ===================");
-    return blocks;
   };
 
   getInfo() {

@@ -17,7 +17,7 @@ class ReportTypeBlock implements Block {
     });
   };
   opCode({ TYPE }: Props) {
-    // console.log(`Type: ${TYPE}`);
+    console.log(`Type: ${TYPE}`);
     return TYPE;
   }
 }
