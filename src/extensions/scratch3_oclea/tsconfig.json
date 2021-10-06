@@ -1,0 +1,16 @@
+{
+  "extends": "@mindhive/tsconfig",
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "es2019"],
+    "allowJs": true,
+//    "outFile": "../node_modules/scratch-vm/src/extensions/scratch3_pen/index.js",
+    "outFile": "./lib/index.js",
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

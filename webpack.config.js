@@ -62,26 +62,12 @@ module.exports = [
     }),
     // Node-compatible
     defaultsDeep({}, base, {
-        target: 'node',
-        entry: {
-            'scratch-vm': './src/index.js'
-        },
-        output: {
-            libraryTarget: 'commonjs2',
-            path: path.resolve('dist', 'node')
-        },
-        externals: {
-            'decode-html': true,
-            'format-message': true,
-            'htmlparser2': true,
-            'immutable': true,
-            'jszip': true,
-            'minilog': true,
-            'scratch-parser': true,
+        target: 'node', 'yarn'
+            "scratch-parser": true,
             'socket.io-client': true,
             'text-encoding': true
-        }
-    }),
+        },
+    ),
     // Playground
     defaultsDeep({}, base, {
         target: 'web',
