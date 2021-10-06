@@ -1,13 +1,7 @@
-## Oclea Low Code scratch-vm
+## Oclea scratch-vm
 #### Modified Scratch VM library so we can have custom extensions [Original Scratch VM](https://github.com/LLK/scratch-vm) here.
 
 ## Installation
-This requires you to have Git and Node.js installed.
-
-To install as a dependency for your own application:
-```bash
-npm install scratch-vm
-```
 To set up a development environment to edit scratch-vm yourself:
 ```bash
 git clone https://github.com/nickvirtue/scratch-vm.git
