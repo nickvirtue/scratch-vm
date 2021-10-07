@@ -7,5 +7,6 @@ interface Block {
 
 const makeBlockData = (opFunction: string, data: Record<string, any>) => ({
   opcode: opFunction,
+
   ...data,
 });

@@ -5,21 +5,21 @@ class CommandGoogleSheetsBlock implements Block {
 
   generate = (opFunction: string) => {
     return makeBlockData(opFunction, {
-      text: `Add [${DATA}] as row to [${SHEET_NAME}]`,
+      text: `Add [${OBJECT}] as new row in [${SHEET_NAME}]`,
       blockType: BlockType.COMMAND,
       arguments: {
+          [OBJECT]: {
+              type: ArgumentType.NUMBER,
+              // defaultValue: "data",
+          },
         [SHEET_NAME]: {
           type: ArgumentType.STRING,
           defaultValue: "Some sheet name",
         },
-        [DATA]: {
-          type: ArgumentType.STRING,
-          defaultValue: "Data",
-        },
       },
     });
   };
-  opCode({ DATA, EMAIL_ADDRESS }: Props) {
-    console.log(`Send ${DATA} as email to ${EMAIL_ADDRESS}`);
+  opCode({ OBJECT, SHEET_NAME }: Props) {
+    console.log(`Add ${getTypeByIndex(OBJECT)} to new row in ${SHEET_NAME}`);
   }
 }

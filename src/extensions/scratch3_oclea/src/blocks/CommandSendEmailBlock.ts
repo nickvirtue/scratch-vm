@@ -10,7 +10,7 @@ class CommandSendEmailBlock implements Block {
       arguments: {
         [OBJECT]: {
           type: ArgumentType.NUMBER,
-          // defaultValue: "Data",
+          // defaultValue: "data",
         },
         [EMAIL_ADDRESS]: {
           type: ArgumentType.STRING,
@@ -20,7 +20,7 @@ class CommandSendEmailBlock implements Block {
     });
   };
   opCode({ OBJECT, EMAIL_ADDRESS }: Props) {
-    console.log(`Send ${OBJECT} as email to ${EMAIL_ADDRESS}`);
+    console.log(`Send ${getTypeByIndex(OBJECT)} as email to ${EMAIL_ADDRESS}`);
     return true;
   }
 }

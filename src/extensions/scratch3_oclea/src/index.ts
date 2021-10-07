@@ -47,7 +47,7 @@ class OcleaLowCodeAI {
     // console.log("end ========= ===================");
     return [
         this.WhenObjectDetectedBlock.generate("whenObjectDetected"),
-        this.ReportTypeBlock.generate("getType"),
+        // this.ReportTypeBlock.generate("getType"),
         this.ReportObjectDetectedBlock.generate("getDetectedObject"),
         this.ReportObjectAgeBlock.generate("getObjectAge"),
         this.ReportObjectTypeBlock.generate("getObjectType"),
@@ -62,6 +62,8 @@ class OcleaLowCodeAI {
       id: OcleaLowCodeAI.EXTENSION_ID,
       name: "Oclea Low Code",
       blockIconURI: iconURI,
+        color1: '#e07201',
+        color2: '#faaa5b',
 
       blocks: this._getBlocks(),
       menus: {

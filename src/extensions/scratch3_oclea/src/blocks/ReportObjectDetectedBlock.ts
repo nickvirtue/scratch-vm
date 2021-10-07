@@ -5,10 +5,10 @@ class ReportObjectDetectedBlock implements Block {
 
   generate = (opFunction: string) => {
     return makeBlockData(opFunction, {
-      text: `[${TYPE}] Detected`,
+      text: `[${OBJECT}] Detected`,
       blockType: BlockType.REPORTER,
       arguments: {
-        TYPE: {
+          [OBJECT]: {
           type: ArgumentType.NUMBER,
           menu: TypeMenu.ID,
           defaultValue: 0,
@@ -16,8 +16,8 @@ class ReportObjectDetectedBlock implements Block {
       },
     });
   };
-  opCode({ TYPE }: Props) {
-    console.log(`Detected ${TYPE}`);
-    return TYPE;
+  opCode({ OBJECT }: Props) {
+    // console.log(`Detected ${getTypeByIndex(OBJECT)}`);
+    return OBJECT;
   }
 }

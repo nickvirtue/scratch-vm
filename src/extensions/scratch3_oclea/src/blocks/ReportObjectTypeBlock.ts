@@ -10,7 +10,8 @@ class ReportObjectTypeBlock implements Block {
       arguments: {
         [OBJECT]: {
           type: ArgumentType.NUMBER,
-          // defaultValue: "Object",
+            defaultValue: -1,
+
         },
         [TYPE]: {
           type: ArgumentType.NUMBER,
@@ -23,7 +24,7 @@ class ReportObjectTypeBlock implements Block {
   opCode({ OBJECT, TYPE }: Props) {
     const result = Number(OBJECT) === Number(TYPE);
     if (result) {
-      // console.log(`${OBJECT} is ${TYPE} = ${result}`);
+        console.log(`${getTypeByIndex(OBJECT)} is ${getTypeByIndex(TYPE)} = ${result}`);
     }
     return result;
   }

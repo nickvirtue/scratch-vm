@@ -5,7 +5,11 @@ const TypeMenu: MenuData = {
   items: ["Face", "Person", "Pet", "Dog", "Cat"],
 };
 
+const getTypeByIndex = (index: number) => TypeMenu.items[index]
+
 const ageMenu: MenuData = {
   ID: "AGE_MENU",
   items: ["Unknown", "Recognised"],
 };
+
+const getAgeByIndex = (index: number) => ageMenu.items[index]

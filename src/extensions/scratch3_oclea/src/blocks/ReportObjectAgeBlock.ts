@@ -23,16 +23,16 @@ class ReportObjectAgeBlock implements Block {
   opCode({ OBJECT, AGE }: Props) {
     const obj = OBJECT;
     const ag = AGE;
-    console.log(`OBJECT:${typeof obj} '${obj}'`);
-    console.log(`AGE:${typeof ag} '${ag}'`);
+    // console.log(`OBJECT:${typeof obj} '${obj}'`);
+    // console.log(`AGE:${typeof ag} '${ag}'`);
     if (obj < 0) {
       console.log("No OBJECT");
       return false;
     }
     const result = ag > 0 ? obj < 2 : obj >= 2;
-    // if (result) {
-    console.log(`(${ag} > 0 ? ${obj} < 2 : ${obj} >= 2) => ${result}`);
-    // }
+    if (result) {
+    console.log(`(${getTypeByIndex(OBJECT)} is ${getAgeByIndex(AGE)} => ${result}`);
+    }
     return result;
   }
 }
