@@ -1,7 +1,7 @@
-## Oclea scratch-vm
+# Oclea scratch-vm
 #### Modified Scratch VM library so we can have custom extensions [Original Scratch VM](https://github.com/LLK/scratch-vm) here.
 
-## Installation
+### Installation
 To set up a development environment to edit scratch-vm yourself:
 ```bash
 git clone https://github.com/nickvirtue/scratch-vm.git
@@ -18,9 +18,25 @@ Then in `low-code-ai` client:
 yarn link "scratch-vm"
 ```
 
-## Development
+### Development
 To compile the extension to Vanilla JS in the correct location:
 ```bash
 yarn run watch:extensiion
 ```
 Now any changes you make will automatically be compiled AND if you are running low code AI locally it should detect the change, re-build and once you refresh the page..... new toys live.
+
+## Changes
+
+Load any external extension:
+```javascript
+extensionManager.loadExtensionSync(ExtensionClass)
+```
+
+```javascript
+class ExtensionClass {
+    static get EXTENSION_ID() {
+        return "ocleaLowCode";
+    }
+}
+```
+ ExtensionClass.EXTENSION_ID must supply a valid (camelCase) extension ID
