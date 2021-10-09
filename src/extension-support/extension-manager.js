@@ -146,8 +146,25 @@ class ExtensionManager {
         this._loadExtensionSync(extension, extension.EXTENSION_ID)
     }
 
+    /**
+     * Synchronously load an extension class.
+     * @param {function} builder - the Class for the extension, needs a static EXTENSION_ID property to provide the ID
+     */
+    loadExtensionBuilder (builder) {
+        if (!builder) {
+            log.warn("ExtensionManager.loadExtensionBuilder called without builder");
+            return;
+        }
+        const extensionInstance = builder(this.runtime);
+        this._registerExtensionSync(extensionInstance, extensionInstance.EXTENSION_ID)
+    }
+
     _loadExtensionSync (extension, extensionId) {
         const extensionInstance = new extension(this.runtime);
+        this._registerExtensionSync(extensionInstance, extensionId)
+    }
+
+    _registerExtensionSync (extensionInstance, extensionId) {
         const serviceName = this._registerInternalExtension(extensionInstance);
         this._loadedExtensions.set(extensionId, serviceName);
     }
