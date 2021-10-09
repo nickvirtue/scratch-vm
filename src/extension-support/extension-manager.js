@@ -156,6 +156,15 @@ class ExtensionManager {
             return;
         }
         const extensionInstance = builder(this.runtime);
+        log.info(`Rxtension with ID ${extensionInstance.EXTENSION_ID}`)
+        log.info(extensionInstance.getInfo())
+
+        if (this.isExtensionLoaded(extensionInstance.EXTENSION_ID)) {
+            const message = `Rejecting attempt to load a second extension with ID ${extensionInstance.EXTENSION_ID}`;
+            log.warn(message);
+            return;
+        }
+
         this._registerExtensionSync(extensionInstance, extensionInstance.EXTENSION_ID)
     }
 
