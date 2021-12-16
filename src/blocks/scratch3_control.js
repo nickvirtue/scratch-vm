@@ -84,16 +84,19 @@ class Scratch3ControlBlocks {
     }
 
     forEach (args, util) {
+        if (!Array.isArray(args.VALUE)) {
+            return
+        }
+        console.log(util.thread.topBlock)
         const variable = util.target.lookupOrCreateVariable(
-            args.VARIABLE.id, args.VARIABLE.name);
-
+            args.VARIABLE.id, args.VARIABLE.name || 'loop var');
         if (typeof util.stackFrame.index === 'undefined') {
             util.stackFrame.index = 0;
         }
 
-        if (util.stackFrame.index < Number(args.VALUE)) {
+        if (util.stackFrame.index < Array.from(args.VALUE).length) {
+            variable.value = Array.from(args.VALUE)[util.stackFrame.index];
             util.stackFrame.index++;
-            variable.value = util.stackFrame.index;
             util.startBranch(1, true);
         }
     }

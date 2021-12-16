@@ -348,6 +348,9 @@ class BlockCached {
             if (input.block) {
                 const inputCached = BlocksExecuteCache.getCached(blockContainer, input.block, BlockCached);
 
+                if (inputCached === null) {
+                    continue;
+                }
                 if (inputCached._isHat) {
                     continue;
                 }

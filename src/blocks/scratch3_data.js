@@ -18,8 +18,8 @@ class Scratch3DataBlocks {
             data_variable: this.getVariable,
             data_setvariableto: this.setVariableTo,
             data_changevariableby: this.changeVariableBy,
-            data_hidevariable: this.hideVariable,
-            data_showvariable: this.showVariable,
+            // data_hidevariable: this.hideVariable,
+            // data_showvariable: this.showVariable,
             data_listcontents: this.getListContents,
             data_addtolist: this.addToList,
             data_deleteoflist: this.deleteOfList,
@@ -30,8 +30,8 @@ class Scratch3DataBlocks {
             data_itemnumoflist: this.getItemNumOfList,
             data_lengthoflist: this.lengthOfList,
             data_listcontainsitem: this.listContainsItem,
-            data_hidelist: this.hideList,
-            data_showlist: this.showList
+            // data_hidelist: this.hideList,
+            // data_showlist: this.showList
         };
     }
 
@@ -124,6 +124,8 @@ class Scratch3DataBlocks {
     }
 
     addToList (args, util) {
+        console.log('addToList addToList addToList addToList addToList ')
+
         const list = util.target.lookupOrCreateList(
             args.LIST.id, args.LIST.name);
         if (list.value.length < Scratch3DataBlocks.LIST_ITEM_LIMIT) {

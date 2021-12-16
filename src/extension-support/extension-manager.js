@@ -156,8 +156,8 @@ class ExtensionManager {
             return;
         }
         const extensionInstance = builder(this.runtime);
-        log.info(`Rxtension with ID ${extensionInstance.EXTENSION_ID}`)
-        log.info(extensionInstance.getInfo())
+        // log.info(`Rxtension with ID ${extensionInstance.EXTENSION_ID}`)
+        // log.info(extensionInstance.getInfo())
 
         if (this.isExtensionLoaded(extensionInstance.EXTENSION_ID)) {
             const message = `Rejecting attempt to load a second extension with ID ${extensionInstance.EXTENSION_ID}`;
@@ -273,6 +273,8 @@ class ExtensionManager {
      * @returns {string} The name of the registered extension service
      */
     _registerInternalExtension (extensionObject) {
+        console.log('_registerInternalExtension')
+        console.log(extensionObject)
         const extensionInfo = extensionObject.getInfo();
         const fakeWorkerId = this.nextExtensionWorker++;
         const serviceName = `extension_${fakeWorkerId}_${extensionInfo.id}`;
